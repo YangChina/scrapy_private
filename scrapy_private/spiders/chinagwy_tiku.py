@@ -89,7 +89,35 @@ class ShenlunSpider(Spider):
             yield Request(next_url,callback=self.parse)
  '''
     def parse_exam(self,response):
+        '''
+        1.交卷。
+        Request URL:http://exam.chinagwy.org/index.php?mod=exercise&act=submit
+        Request Method:POST
+        FormData
+            paper_id:9929449
+            flag:2
+        2.response 查看报告
+        http://exam.chinagwy.org/index.php?mod=exercise&act=report&tid=9929449
+        3.查看解析
+        http://exam.chinagwy.org/index.php?mod=exercise&act=solution&tid=9929449
+
+        '''
+
+
         print('chinagwy_tiku -->> parse_exam -->> response :::',response)
+        
+        if response.url.find('act=paper') >= 0:
+            # 载入试题页面
+            # 发送提交请求
+
+            pass
+        
+        if response.url.find('act=report') >= 0:
+            # 载入报告页面
+            # 发送查看解析请求
+            
+            pass
+        
         if response.url.find('act=paper') >= 0:
             exam_url = response.url.replace('act=paper', 'act=solution')
             print('chinagwy_tiku -->> parse_exam -->> exam_url.replace :::',exam_url)
