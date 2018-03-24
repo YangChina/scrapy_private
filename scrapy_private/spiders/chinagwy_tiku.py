@@ -47,7 +47,7 @@ class ShenlunSpider(Spider):
             exam_url = 'http://exam.chinagwy.org/index.php' + exam.xpath('./a/@href').extract()[0]
             #print('chinagwy_tiku -->> parse -->> exam :::',exam)
             print('chinagwy_tiku -->> parse -->> exam_url :::',exam_url)
-            yield Request(exam_url,headers=self.headers,callback=self.parse_exam)
+            yield Request(exam_url, headers=self.headers, callback=self.parse_exam)
             '''
             if type(article.xpath('.//a/@href').extract()) != type([]):
                 print('ShenlunSpider -->> parse -->> article_url :::','抓取URL不是list......')
