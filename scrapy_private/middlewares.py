@@ -6,8 +6,8 @@
 # https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 from scrapy import signals
-from scrapy_project.settings import USER_AGENT_LIST
-from scrapy_project.settings import PROXIES
+from scrapy_private.settings import USER_AGENT_LIST
+from scrapy_private.settings import PROXIES
 import random
 import base64
 

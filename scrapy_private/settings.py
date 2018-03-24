@@ -11,8 +11,8 @@
 
 BOT_NAME = 'spider_project'
 
-SPIDER_MODULES = ['scrapy_project.spiders']
-NEWSPIDER_MODULE = 'scrapy_project.spiders'
+SPIDER_MODULES = ['scrapy_private.spiders']
+NEWSPIDER_MODULE = 'scrapy_private.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -50,13 +50,13 @@ COOKIES_ENABLED = False
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'scrapy_project.middlewares.SpiderMeizituSpiderMiddleware': 543,
+#    'scrapy_private.middlewares.SpiderMeizituSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'scrapy_project.middlewares.SpiderMeizituDownloaderMiddleware': 543,
+#    'scrapy_private.middlewares.SpiderMeizituDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -69,8 +69,8 @@ COOKIES_ENABLED = False
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     #'scrapy.contrib.pipeline.images.ImagesPipeline': 1,
-    'scrapy_project.pipelines.SpiderMeizituPipeline': 300,
-    'scrapy_project.pipelines.SpiderDoubanPipeline': 400,
+    'scrapy_private.pipelines.SpiderMeizituPipeline': 300,
+    'scrapy_private.pipelines.SpiderDoubanPipeline': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -94,7 +94,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-IMAGES_STORE = '/home/along/python/scrapy_project/meizitu'
+IMAGES_STORE = '/home/along/python/scrapy_private/meizitu'
 
 DEFAULT_REQUEST_HEADERS = {
     'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -135,10 +135,10 @@ USER_AGENT_LIST = [
 ]
 
 DOWNLOADER_MIDDLEWARES = {
-    'scrapy_project.middlewares.RandomUserAgentMiddleware': 1,
+    'scrapy_private.middlewares.RandomUserAgentMiddleware': 1,
     #'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
     #'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
-    'scrapy_project.middlewares.ProxyMiddleware': 100,
+    'scrapy_private.middlewares.ProxyMiddleware': 100,
 }
 
 
