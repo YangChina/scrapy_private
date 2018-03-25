@@ -28,3 +28,10 @@ class Exam_Gongwuyuan_shenlun_Item(scrapy.Item):
     title = scrapy.Field() 
     # 内容 
     content = scrapy.Field()
+
+class NationalStandardItem(scrapy.Item):
+    StandardCategory = scrapy.Field()
+    StandardNum = scrapy.Field()
+    StandardTitle = scrapy.Field()
+    StandardUrl = scrapy.Field()
+    StandardID = scrapy.Field()
