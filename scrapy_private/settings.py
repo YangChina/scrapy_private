@@ -14,7 +14,8 @@ BOT_NAME = 'spider_project'
 SPIDER_MODULES = ['scrapy_private.spiders']
 NEWSPIDER_MODULE = 'scrapy_private.spiders'
 
-
+HTTPERROR_ALLOWED_CODES = [304,403]#上面报的是403，就把403加入。
+ROBOTSTXT_OBEY = False
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'spider_meizitu (+http://www.yourdomain.com)'
 

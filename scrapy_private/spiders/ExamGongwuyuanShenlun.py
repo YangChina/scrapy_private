@@ -23,6 +23,7 @@ class ShenlunSpider(Spider):
     basePath = './spider_data/shenlunfanwen/'
 
     def parse(self, response):
+        basePath = self.basePath
         #print('ShenlunSpider -->> parse -->> response.body:::',response.body.decode('gbk'))
         article_lists = response.xpath('//div[@class="list"]//li')
         
@@ -70,6 +71,7 @@ class ShenlunSpider(Spider):
             yield Request(next_url,callback=self.parse)
  
     def parse_article_content(self,response):
+        basePath = self.basePath
         time.sleep(random.randint(2,10))
         
         doc = Document()
